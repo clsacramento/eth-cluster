@@ -1,0 +1,3 @@
+#this works
+#docker run --name teth1 --entrypoint="/bin/bash" -ti -v /Users/cynthia/dev/geth:/ethdata ethereum/client-go /ethdata/myether.sh /ethdata teh1
+

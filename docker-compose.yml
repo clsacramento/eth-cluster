@@ -1,0 +1,14 @@
+version: '2'
+services:
+  eth1:
+    image: "ethereum/client-go"
+#    ports:
+#     - "5000:5000"
+    volumes:
+     - .:/ethconf
+    entrypoint: bash /ethconf/myether.sh /ethdata eth1
+  eth2:
+    image: "ethereum/client-go"
+    volumes:
+     - .:/ethconf
+    entrypoint: bash /ethconf/myether.sh /ethdata eth2
