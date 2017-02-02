@@ -1,5 +1,5 @@
 {
-  "alloc"      : {},
+  "alloc"      : {"0xf0b462ef19bba9366c4bf229dc3e438e0c1cca7b":{"balance":"20000000000000000000"}},
   "coinbase"   : "0x0000000000000000000000000000000000000000",
   "difficulty" : "0x20000",
   "extraData"  : "",
