@@ -6,6 +6,8 @@ services:
 #     - "5000:5000"
     volumes:
      - .:/ethconf
+     #TODO: add volumes to persist the nodes states
+     #TODO: add some automation to add one node to the other
     entrypoint: bash /ethconf/myether.sh /ethconf eth1
   eth2:
     image: "ethereum/client-go"
