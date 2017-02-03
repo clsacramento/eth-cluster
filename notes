@@ -1,3 +1,17 @@
 #this works
-#docker run --name teth1 --entrypoint="/bin/bash" -ti -v /Users/cynthia/dev/geth:/ethdata ethereum/client-go /ethdata/myether.sh /ethdata teh1
 
+Running the geth docker image with custom start script
+~~~
+docker run --name teth1 --entrypoint="/bin/bash" -ti -v /Users/cynthia/dev/geth:/ethdata ethereum/client-go /ethdata/myether.sh /ethdata teh1
+~~~
+
+
+## Geth console
+
+Setting account and getting balance
+~~~
+> web3.miner.setEtherbase(web3.eth.accounts[1])
+true
+> eth.getBalance(eth.coinbase).toNumber();
+20000000000000000000
+~~~
