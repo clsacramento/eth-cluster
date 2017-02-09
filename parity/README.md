@@ -54,4 +54,8 @@ $ curl --data '{"jsonrpc":"2.0","method":"parity_newAccountFromPhrase","params":
 {"jsonrpc":"2.0","result":"0x00aa39d30f0d20ff03a22ccfc30b7efbfca597c2","id":0}
 ~~~
 
-
+Also create a user account node0
+~~~
+$ curl --data '{"jsonrpc":"2.0","method":"parity_newAccountFromPhrase","params":["user", "user"],"id":0}' -H "Content-Type: application/json" -X POST localhost:8540
+{"jsonrpc":"2.0","result":"0x004ec07d2329997267ec62b4166639513386f32e","id":0}
+~~~
