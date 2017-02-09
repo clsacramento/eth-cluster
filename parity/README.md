@@ -132,3 +132,20 @@ eth1_1  | 2017-02-09 15:14:15 UTC Unauthorized connection to Signer API blocked.
 eth2_1  | 2017-02-09 15:14:45 UTC    0/ 0/25 peers     7 KiB db    7 KiB chain  0 bytes queue 448 bytes sync  RPC:  0 conn,  0 req/s,   0 µs
 eth1_1  | 2017-02-09 15:14:45 UTC    0/ 0/25 peers     7 KiB db    7 KiB chain  0 bytes queue 448 bytes 
 ~~~
+
+
+### Link the two nodes
+
+On the first node get its enode:
+
+~~~
+$ curl --data '{"jsonrpc":"2.0","method":"parity_enode","params":[],"id":0}' -H "Content-Type: application/json" -X POST localhost:8540
+{"jsonrpc":"2.0","result":"enode://a666df485a53ca8592af957bdddfbf0ec358dd33d28736c80e9e89a91a0f9b23a783d0a34faf9ffc955186625461cd9b3a91b7292e461755233edcd7409052af@172.21.0.3:30300","id":0}
+~~~
+
+Than add its enode on the seconde node (using the enode from the result of the previous command):
+
+~~~
+$ curl --data '{"jsonrpc":"2.0","method":"parity_addReservedPeer","params":["enode://a666df485a53ca8592af957bdddfbf0ec358dd33d28736c80e9e89a91a0f9b23a783d0a34faf9ffc955186625461cd9b3a91b7292e461755233edcd7409052af@172.21.0.3:30300"],"id":0}' -H "Content-Type: application/json" -X POST localhost:8541
+{"jsonrpc":"2.0","result":true,"id":0}
+~~~
