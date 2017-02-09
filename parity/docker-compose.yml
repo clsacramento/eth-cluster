@@ -1,0 +1,24 @@
+version: '2'
+services:
+  eth1:
+    image: "ethcore/parity:v1.5.2"
+    ports:
+     - "8180:8180"
+     - "30300:30300"
+     - "8080:8080"
+     - "8540:8540"
+    volumes:
+     - .:/parityconf
+     #TODO: add volumes to persist the nodes states
+     #TODO: add some automation to add one node to the other
+    entrypoint: bash /parityconf/myparity.sh /parityconf
+  eth2:
+    image: "ethcore/parity:v1.5.2"
+    ports:
+     - "8181:8180"
+     - "30301:30300"
+     - "8081:8080"
+     - "8541:8540"
+    volumes:
+     - .:/parityconf
+    entrypoint: bash /parityconf/myparity.sh /parityconf
