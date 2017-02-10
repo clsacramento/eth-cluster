@@ -2,6 +2,9 @@
 
 Parity is a private Ethereum cluster by default.
 
+This is based on the instructions found here: https://github.com/ethcore/parity/wiki/Demo-PoA-tutorial
+
+
 ## Setup an initial Cluster
 
 ~~~
